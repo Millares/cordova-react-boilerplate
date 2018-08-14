@@ -1,12 +1,15 @@
 import React from 'react';
+import Layout from './app.layout';
 
-export default class App extends React.Component {
+interface AppI {}
+
+export default class App extends React.Component<{}, AppI> {
 
   constructor(props: any) {
     super(props);
   }
 
   render() {
-    return <h1>PROBANDO</h1>;
+    return <Layout></Layout>;
   }
 }

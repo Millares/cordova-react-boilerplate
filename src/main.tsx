@@ -5,8 +5,7 @@ import App from './containers/app.container';
 
 document.addEventListener('deviceready', function () {
   ReactDOM.render(
-    <App>
-    </App>,
+    <App></App>,
     document.getElementById('app')
   );
 }, false);
