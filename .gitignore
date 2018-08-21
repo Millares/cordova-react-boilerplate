@@ -2,4 +2,4 @@
 /.vscode
 /platforms
 /plugins
-/www/js/bundle.*
+/www/assets/bundle.*
