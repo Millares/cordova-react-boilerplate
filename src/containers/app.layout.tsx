@@ -6,6 +6,11 @@ import Home from './Home';
 import Pagina1 from './Pagina1';
 import Pagina2 from './Pagina2';
 
+const BASE_NAME_BY_PLATFORM: any = {
+  android: '/android_asset/www/index.html',
+  browser: 'index.html'
+};
+
 interface LayoutStateInterface {
   isOpen: boolean;
 }
@@ -31,11 +36,7 @@ export default class Layout extends React.Component<{}, LayoutStateInterface> {
   }
 
   getBaseNameByPlatform() {
-    let basename = 'index.html';
-    if (/android/.test(cordova.platformId)) {
-      basename = '/android_asset/www/index.html';
-    }
-    return basename;
+    return BASE_NAME_BY_PLATFORM[cordova.platformId];
   }
 
   render() {

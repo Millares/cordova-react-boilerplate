@@ -34,7 +34,7 @@ export default class NavbarWrapper extends React.Component<{}, NavbarStateInterf
   render() {
     return (
         <Navbar color='light' light expand='md'>
-          <NavbarBrand href='/'>reactstrap</NavbarBrand>
+          <NavbarBrand>reactstrap</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='ml-auto' navbar>

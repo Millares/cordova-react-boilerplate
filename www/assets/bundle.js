@@ -17559,6 +17559,11 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var BASE_NAME_BY_PLATFORM = {
+    android: '/android_asset/www/index.html',
+    browser: 'index.html'
+};
+
 var Layout = function (_React$Component) {
     _inherits(Layout, _React$Component);
 
@@ -17585,11 +17590,7 @@ var Layout = function (_React$Component) {
     }, {
         key: 'getBaseNameByPlatform',
         value: function getBaseNameByPlatform() {
-            var basename = 'index.html';
-            if (/android/.test(cordova.platformId)) {
-                basename = '/android_asset/www/index.html';
-            }
-            return basename;
+            return BASE_NAME_BY_PLATFORM[cordova.platformId];
         }
     }, {
         key: 'render',
@@ -17713,7 +17714,7 @@ var NavbarWrapper = function (_React$Component) {
         { color: 'light', light: true, expand: 'md' },
         _react2.default.createElement(
           _reactstrap.NavbarBrand,
-          { href: '/' },
+          null,
           'reactstrap'
         ),
         _react2.default.createElement(_reactstrap.NavbarToggler, { onClick: this.toggle }),
